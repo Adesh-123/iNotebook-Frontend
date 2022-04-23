@@ -16,13 +16,11 @@ const NoteState = (props) => {
       },
     });
     const json = await response.json();
+    // console.log(localStorage.getItem('token'))
     setNotes(json);
   };
 
-  // ADD NOTES FUNCTION IS NOT CREATED
   const addnote = async (title, description, tag) => {
-    // TODO: API Call
-    // API Call
     const response = await fetch(`${host}/api/notes/addnote`, {
       method: "POST",
       headers: {
@@ -32,6 +30,7 @@ const NoteState = (props) => {
       body: JSON.stringify({ title, description, tag }),
     });
    const json= await response.json();
+  //  console.log(json);
     setNotes(notes.concat(json));
   };
 

@@ -15,7 +15,6 @@ export default function Notes(props) {
         }
         else{
             history.push("/login");}
-    //   react-hooks/exhaustive-deps
     }, [])
     const ref = useRef(null)
     const refclose = useRef(null)
@@ -23,9 +22,9 @@ export default function Notes(props) {
         ref.current.click();
         setNote({
             id:currentNote._id,
-         etitle:currentNote.title,
-         edescription:currentNote.description,
-         etag:currentNote.tag
+            etitle:currentNote.title,
+            edescription:currentNote.description,
+            etag:currentNote.tag
         })
     }
     const handleClick = (e) => {
@@ -39,6 +38,7 @@ export default function Notes(props) {
     };
     return (
         <>
+        <div>
             <Addnotes showAlert={props.showAlert}/>
             <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
@@ -106,13 +106,14 @@ export default function Notes(props) {
                 </div>
             </div>
            <div className= "row my-3">
-            <div className="container mx-2">
-            {notes.length ===0 && "No notes is created"}
+            <div className="container mx-2" style={{color:"white",fontSize:"28px",display:"flex"}}>
+            {notes.length ===0 && "OPPS! No notes is created"}
             </div>
             {notes.map((note)=>{
             return <Notesitem showAlert={props.showAlert} updatenote={updatenote} key={note._id} note={note}/>;
             })}
             </div> 
+        </div>
         </>
     )
 }

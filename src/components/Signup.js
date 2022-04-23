@@ -15,11 +15,11 @@ const Signup = (props) => {
             body: JSON.stringify({name,password,email}),
           });
           const json = await response.json();
-          console.log(json);
           if(json.sucess){
               localStorage.setItem('token',json.authtoken);
+            //   console.log(localStorage.getItem('token'));
               history.push('/Home');
-              props.showAlert("Account created sucessfully","sucess")
+              props.showAlert("Account created sucessfully","success")
           }
           else  props.showAlert("Invalid detail","danger")
     }
@@ -28,7 +28,7 @@ const Signup = (props) => {
      }
 
     return (
-        <div className="container">
+        <div className="container" style={{width:"600px",color:"white"}}>
              <h1 className="mt-3">Create Account to use iNotebook</h1>
           <form onSubmit={handleSubmit}>
             <div className="form-group my-4">

@@ -1,7 +1,6 @@
 import { React, useContext, useState } from "react";
 import notecontent from "../context/notes/NoteContext";
 
-
 export default function Addnotes(props) {
   const content = useContext(notecontent);
   const { addnote } = content;
@@ -20,7 +19,7 @@ export default function Addnotes(props) {
   };
 
   return (
-    <div className="container my-3">
+    <div className="container my-3" style={{maxWidth:"500px",border:"1px solid black",color:"white"}}>
       <h2>Add a Note</h2>
       <form className="my-3">
         <div className="mb-3">

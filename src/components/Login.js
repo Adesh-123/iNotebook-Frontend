@@ -29,16 +29,16 @@ const Login = (props) => {
 
     return (
         <>
-        <div className="container"  >
-            <h1 className="mt-3">Login in with your Account to use iNotebook</h1>
+        <div className="container" style={{width:"600px",color:"white"}} >
+            <h1 className="mt-3">Login with your Account to use iNotebook</h1>
             <form onSubmit={handleSubmit}>
             <div className="form-group" style={{marginTop:"50px"}}>
-                <label htmlFor="exampleInputEmail1">Email address</label>
+                <label htmlFor="exampleInputEmail1" style={{marginBottom:"10px"}}>Email address</label>
                 <input type="email" className="form-control" id="email" name="email" value={credential.email}  onChange={onchange} aria-describedby="emailHelp" placeholder="Enter email"/>
                 <small id="emailHelp" className="form-text text-muted"></small>
             </div>
             <div className="form-group">
-                 <label htmlFor="password" className="form-label">Password</label>
+                 <label htmlFor="password" className="form-label" style={{marginBottom:"10px",marginTop:"10px"}}>Password</label>
                     <input type="password" className="form-control" value={credential.password} onChange={onchange} name="password" id="password" />
             </div>
             <button type="submit" className="btn btn-primary my-3">Submit</button>

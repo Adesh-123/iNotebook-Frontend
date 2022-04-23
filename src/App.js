@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import NoteState from "./context/notes/NoteState";
 import { useState } from "react";
+import Visiblepage from "./components/Visiblepage";
 
 
 
@@ -28,9 +29,12 @@ function App() {
     <>
     <NoteState>
       <Router>
-      <Navbar />
+        <Navbar />
         <Alert alert={alert}/>
         <Switch>
+          <Route exact path="/">
+            <Visiblepage/>
+          </Route>
           <Route  exact path="/about">
                <About />
           </Route>
